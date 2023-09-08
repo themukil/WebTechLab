@@ -1,53 +1,47 @@
 import java.util.Scanner;
 
-public class Q1 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int[] salaryRanges = new int[9]; // Array to store counters for each salary range
-
-        int grossSales;
-        System.out.print("Enter gross sales for salesperson (-1 to exit): ");
-        grossSales = scanner.nextInt();
-
-        while (grossSales != -1) {
-            int earnings = 200 + (int) (0.09 * grossSales);
-
-            if (earnings >= 200 && earnings <= 299) {
-                salaryRanges[0]++;
-            } else if (earnings >= 300 && earnings <= 399) {
-                salaryRanges[1]++;
-            } else if (earnings >= 400 && earnings <= 499) {
-                salaryRanges[2]++;
-            } else if (earnings >= 500 && earnings <= 599) {
-                salaryRanges[3]++;
-            } else if (earnings >= 600 && earnings <= 699) {
-                salaryRanges[4]++;
-            } else if (earnings >= 700 && earnings <= 799) {
-                salaryRanges[5]++;
-            } else if (earnings >= 800 && earnings <= 899) {
-                salaryRanges[6]++;
-            } else if (earnings >= 900 && earnings <= 999) {
-                salaryRanges[7]++;
-            } else {
-                salaryRanges[8]++;
-            }
-
-            System.out.print("Enter gross sales for salesperson (-1 to exit): ");
-            grossSales = scanner.nextInt();
+public class Q1{
+    public static String month(int x){
+        switch(x){
+            case 1:
+                return "January";
+            case 2:
+                return "February";
+            case 3:
+                return "March";
+            case 4:
+                return "April";
+            case 5:
+                return "May";
+            case 6:
+                return "June";
+            case 7:
+                return "July";
+            case 8:
+                return "August";
+            case 9:
+                return "September";
+            case 10:
+                return "October";
+            case 11:
+                return "November";
+            case 12:
+                return "December";
         }
+        return null;
+    }
+    public static void main(String[] args){
+        Scanner ip = new Scanner(System.in);
+        int day,month,year;
 
-        System.out.println("\nSalary Range\tNumber of Salespeople");
-        System.out.println("$200-299\t\t" + salaryRanges[0]);
-        System.out.println("$300-399\t\t" + salaryRanges[1]);
-        System.out.println("$400-499\t\t" + salaryRanges[2]);
-        System.out.println("$500-599\t\t" + salaryRanges[3]);
-        System.out.println("$600-699\t\t" + salaryRanges[4]);
-        System.out.println("$700-799\t\t" + salaryRanges[5]);
-        System.out.println("$800-899\t\t" + salaryRanges[6]);
-        System.out.println("$900-999\t\t" + salaryRanges[7]);
-        System.out.println("$1000 and over\t" + salaryRanges[8]);
+        System.out.println("Enter the day: ");
+        day = ip.nextInt();
+        System.out.println("Enter the month: ");
+        month = ip.nextInt();
+        System.out.println("Enter the year: ");
+        year = ip.nextInt();
 
-        scanner.close();
+        System.out.println("Initial date format: "+month+"/"+day+"/"+year);
+        System.out.println("Modified date format: "+month(month)+" "+day+", "+year);
     }
 }
