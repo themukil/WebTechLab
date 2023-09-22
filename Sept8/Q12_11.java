@@ -1,37 +1,62 @@
-import javax.swing.*;  
-
-public class Q12_11 {  
+// 1st swing
+import javax.swing.*;
+//import java.awt.*;  
+public class swing1 {  
 public static void main(String[] args) {  
-    JFrame f= new JFrame("Printer");  
- 
-    JCheckBox checkBox1 = new JCheckBox("Image");  
-    checkBox1.setBounds(100,100, 50,50);  
-    JCheckBox checkBox2 = new JCheckBox("Text");  
-    checkBox2.setBounds(100,150, 50,50);  
-    JCheckBox checkBox3 = new JCheckBox("Code");  
-    checkBox2.setBounds(100,150, 50,50); 
-    f.add(checkBox1);  
-    f.add(checkBox2);
-    f.add(checkBox3);
-
-    JLabel l1;
-    l1=new JLabel("Printer:MyPrinter");  
-    l1.setBounds(25,100, 100,30); 
-    f.add(l1);
-    JButton b1=new JButton("OK");
-    JButton b2=new JButton("Cancel");
-    JButton b3=new JButton("Setup..");
-    JButton b4=new JButton("Help");
-    b4.setBounds(300,175,90,30);
-    b3.setBounds(300,125,90, 30);
-    b2.setBounds(300,75,90, 30);
-    b1.setBounds(300,25,90, 30);
-
-          
-    f.add(b1); f.add(b2); f.add(b3); f.add(b4);
-          
-    f.setSize(425,250);
-    f.setLayout(null);
-    f.setVisible(true);
+JFrame f=new JFrame("Printer"); 
+JLabel l1 = new JLabel ("Printer: Myprinter");
+l1.setBounds(10, 15, 100, 20);
+JButton OK = new JButton("OK");
+JButton Cancel = new JButton("Cancel");
+JButton Setup = new JButton("Setup");
+JButton Help = new JButton("Help");
+OK.setBounds(350, 10+15, 100, 20);
+Cancel.setBounds(350, 35+15, 100, 20);
+Setup.setBounds(350, 60+15, 100, 20);
+Help.setBounds(350, 85+15, 100, 20);
+JTextField t1,t2,t3;  
+t1=new JTextField();  
+t1.setBounds(10,40, 50,80);
+t2=new JTextField();  
+t2.setBounds(140,40, 50,80);
+t3=new JTextField();  
+t3.setBounds(280,40, 50,80);
+JCheckBox checkBox1 = new JCheckBox("Image");  
+checkBox1.setBounds(61,40, 70,15);  
+JCheckBox checkBox2 = new JCheckBox("Text");  
+checkBox2.setBounds(61,70, 70,15);
+JCheckBox checkBox3 = new JCheckBox("Code");  
+checkBox3.setBounds(61,100, 70,15);  
+JRadioButton r1=new JRadioButton("Selection");    
+JRadioButton r2=new JRadioButton("All");
+JRadioButton r3=new JRadioButton("Applied");    
+r1.setBounds(191,40,70,15);    
+r2.setBounds(191,70,70,15);
+r3.setBounds(191,100,70,15);    
+ButtonGroup bg=new ButtonGroup();    
+bg.add(r1);bg.add(r2);bg.add(r3);
+JLabel l2 = new JLabel ("Print Quality: ");
+l2.setBounds(10, 130, 100, 20);
+f.add(l2);
+String country[]={"High","Normal","Low"};        
+JComboBox cb=new JComboBox(country);    
+cb.setBounds(120, 130,90,20);
+JCheckBox fi=new JCheckBox("Print to file");
+fi.setBounds(220,130,100,20)  ;
+f.add(fi);
+f.add(cb);     
+f.add(r1);f.add(r2);f.add(r3);
+f.add(checkBox1);  
+f.add(checkBox2);f.add(checkBox3);  
+f.add(t1);
+f.add(t2);f.add(t3);
+f.add(OK);
+f.add(Cancel);
+f.add(Setup);
+f.add(Help); 
+f.add(l1);
+f.setSize(500,220);  
+f.setLayout(null);  
+f.setVisible(true); 
 }  
-}  
+}
